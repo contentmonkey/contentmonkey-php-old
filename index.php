@@ -14,13 +14,21 @@ $smarty->setTemplateDir(TEMPLATE_DIR."templates");
 $importStylesheetHTML = "<!-- THEME STYLESHEET IMPORTS -->";
 require TEMPLATE_DIR.'theme.info.php';
 foreach($theme_stylesheets as $stylesheet) {
-  $importStylesheetHTML = $importStylesheetHTML."<link rel='stylesheet' type='text/css' href='".TEMPLATE_DIR.$stylesheet."'>";
+  if(substr($stylesheet, 0, 9) === "external:") {
+    $importStylesheetHTML = $importStylesheetHTML."<link rel='stylesheet' type='text/css' href='".str_replace("external:", "", $stylesheet)."'>";
+  } else {
+    $importStylesheetHTML = $importStylesheetHTML."<link rel='stylesheet' type='text/css' href='".TEMPLATE_DIR.$stylesheet."'>";
+  }
 }
 $importStylesheetHTML = $importStylesheetHTML.'<!-- /THEME STYLESHEET IMPORTS -->';
 $smarty->assign("stylesheets", $importStylesheetHTML);
 $importScriptHTML = "<!-- THEME SCRIPT IMPORTS -->";
 foreach($theme_scripts as $script) {
-  $importScriptHTML = $importScriptHTML."<script src='".TEMPLATE_DIR.$script."'></script>";
+  if(substr($script, 0, 9) === "external:") {
+    $importScriptHTML = $importScriptHTML."<link rel='stylesheet' type='text/css' href='".str_replace("external:", "", $script)."'>";
+  } else {
+    $importScriptHTML = $importScriptHTML."<link rel='stylesheet' type='text/css' href='".TEMPLATE_DIR.$script."'>";
+  }
 }
 $importScriptHTML = $importScriptHTML.'<!-- /THEME SCRIPT IMPORTS -->';
 $smarty->assign("scripts", $importScriptHTML);

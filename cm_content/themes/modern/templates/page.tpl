@@ -5,6 +5,7 @@
   {$stylesheets}
 </head>
 <body>
+  <h1>page.tpl</h1>
   {$scripts}
 </body>
 </html>
