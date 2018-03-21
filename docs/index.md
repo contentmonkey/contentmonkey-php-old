@@ -1,2 +1,3 @@
 # Welcome!
-ContentMonkey is a simple CMS, developed in Germany.
+
+![GitHub top language](https://img.shields.io/github/languages/top/badges/contentmonkey.svg?style=for-the-badge)
