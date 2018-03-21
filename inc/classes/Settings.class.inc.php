@@ -10,7 +10,7 @@ class Settings {
 
     public function getSetting($key) {
       global $db;
-      return $db->QueryArray("SELECT * FROM `cm_settings` WHERE property='".$key."';")[0][1];
+      return $db->QueryArray("SELECT * FROM `cm_settings` WHERE property='".$key."';")[0][2];
     }
 }
 
