@@ -4,7 +4,7 @@ class MysqlPDO extends DatabaseProvider {
     private $connection;
 
     public function Connect($host, $database, $username, $password) {
-      $connection = new \PDO('mysql:host='.$host.';dbname='.$database.';', $username, $password);
+      $this->connection = new \PDO('mysql:host='.$host.';dbname='.$database.';', $username, $password);
     }
 
     public function QueryArray($sql) {
@@ -12,9 +12,13 @@ class MysqlPDO extends DatabaseProvider {
     }
 
     public function Query($sql) {
-        $statement = $connection->prepare($sql);
+        $statement = $this->connection->prepare($sql);
         $statement->execute();
         return $statement;
+    }
+
+    public function __construct($host, $database, $username, $password) {
+      $this->Connect($host, $database, $username, $password);
     }
 }
 ?>
