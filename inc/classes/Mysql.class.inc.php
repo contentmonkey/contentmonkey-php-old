@@ -2,16 +2,16 @@
 
 class Mysql extends DatabaseProvider {
 
-    public function Connect() {
+    public function Connect($host, $database, $username, $password) {
 
     }
 
-    public function QueryArray() {
+    public function QueryArray($sql) {
 
     }
 
-    public function Query() {
-        
+    public function Query($sql) {
+
     }
 
 }
