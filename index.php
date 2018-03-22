@@ -25,9 +25,9 @@ $smarty->assign("stylesheets", $importStylesheetHTML);
 $importScriptHTML = "<!-- THEME SCRIPT IMPORTS -->";
 foreach($theme_scripts as $script) {
   if(substr($script, 0, 9) === "external:") {
-    $importScriptHTML = $importScriptHTML."<link rel='stylesheet' type='text/css' href='".str_replace("external:", "", $script)."'>";
+    $importScriptHTML = $importScriptHTML."<script src='".str_replace("external:", "", $script)."'></script>";
   } else {
-    $importScriptHTML = $importScriptHTML."<link rel='stylesheet' type='text/css' href='".TEMPLATE_DIR.$script."'>";
+    $importScriptHTML = $importScriptHTML."<script src='".TEMPLATE_DIR.$script."'></script>";
   }
 }
 $importScriptHTML = $importScriptHTML.'<!-- /THEME SCRIPT IMPORTS -->';
