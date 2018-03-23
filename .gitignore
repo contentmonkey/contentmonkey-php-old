@@ -2,3 +2,4 @@ composer.phar
 .idea
 templates_c
 templates_c/*
+.DS_STORE

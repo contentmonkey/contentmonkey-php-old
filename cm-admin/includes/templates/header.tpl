@@ -6,6 +6,7 @@
     <meta name="robots" content="noindex">
     <meta name="generator" content="ContentMonkey">
     <meta name="author" content="github.com/MagicMarvMan">
+    <link rel="stylesheet" type="text/css" href="includes/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="includes/css/app.css">
   </head>
   <body>
